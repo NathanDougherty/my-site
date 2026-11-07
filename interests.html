@@ -3,12 +3,12 @@
 <main>
 <h2>Projects at the Intersection of Code and Markets</h2>
 <img src="images/markets.jpg" alt="Stock market chart">
-<p>I learn best by building things. Most of what I know about markets and software comes from projects where I had to make an idea actually work, not just understand it on paper. Each project pushes me to connect code, data, and finance in a new way.</p>
-<p>One of my favorite projects is a clone of the Robinhood trading app, built in TypeScript. Recreating a brokerage interface taught me how much engineering goes into something that looks simple: live price updates, order flows, portfolio views, and a clean user experience that people trust with their money.</p>
-<p>Another project, biotech-options-signals, is a Python tool that looks for trading signals in options on biotech stocks. Biotech is a fun area because big events, like drug trial results and FDA decisions, can move prices sharply. Working on it taught me how to clean messy market data, test ideas carefully, and avoid fooling myself with results that only look good by chance.</p>
-<p>These projects, along with my internships in quantitative research and trading operations, keep pulling me toward the same goal: building tools that help people make better decisions with data. Visualization is a big part of that, because a clear chart can explain risk faster than a table of numbers. The chart below compares the monthly volatility of JetBlue and Exxon Mobil from 2020 to 2024, using data from my finance coursework.</p>
-<h2>What I'm Learning</h2>
-<ul><li>Python and pandas for data analysis</li><li>Data visualization with Altair and D3</li><li>Portfolio returns, risk and correlation</li><li>Building fast, reliable software systems</li></ul>
+<p>I learn best by building things. Most of what I know about markets and software comes from projects where I had to make an idea actually work, not just understand it on paper. Two projects I'm especially proud of sit right where systems engineering meets quantitative finance.</p>
+<p>The first is a high-performance, in-memory vector database written in C++20. It supports both exact and approximate nearest-neighbor search using two well-known indexing methods, HNSW and LSH. To make it fast, I wrote SIMD-optimized distance calculations for both ARM64 Apple Silicon and x86-64 processors, so similarity searches take full advantage of modern CPUs. It taught me how much performance depends on memory layout and low-level details.</p>
+<p>The second is a research project on leveraged ETFs, built in Python with pandas and the Alpaca API. I backtested systematic trading strategies on 2x and 3x leveraged ETFs using more than six years of historical market data, then compared how each strategy held up in different market conditions using returns, drawdowns, and volatility. Leveraged ETFs are tricky because daily rebalancing can quietly eat away at returns, so measuring risk carefully mattered as much as finding gains.</p>
+<p>My internships pushed these skills further. At Flow Traders I built low-latency trading infrastructure and observability dashboards, and at RA Capital Management I built automated research workflows that turned hours of work into about 100 seconds. The chart below is a small example of the kind of risk analysis I enjoy: it compares the monthly volatility of JetBlue and Exxon Mobil from 2020 to 2024.</p>
+<h2>Tools I Work With</h2>
+<ul><li>Languages: Python, C++, Go, TypeScript, SQL</li><li>Infrastructure: Docker, Kubernetes, AWS, gRPC, Kafka</li><li>Data: pandas, PostgreSQL, Databricks, Grafana</li><li>Visualization: D3 and Altair</li></ul>
 <h2>Average Monthly Return vs. Volatility (2020–2024)</h2>
 <div id="chart"></div>
 </main>
