@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Data + Finance</title><link rel="stylesheet" href="style.css"><script src="https://d3js.org/d3.v7.min.js"></script></head>
+<body><nav><a href="index.html">Home</a><a href="interests.html">Data + Finance</a></nav>
+<main>
+<h2>Where Data Science Meets Finance</h2>
+<img src="images/markets.jpg" alt="Stock market chart">
+<p>Finance has always been a numbers-driven field, but today it is just as much a technology field. Banks, trading firms, and asset managers depend on software to collect data, analyze it, and act on it quickly. That's what excites me most about studying both computer science and finance: each one makes the other more powerful.</p>
+<p>In my finance coursework, I've worked with real stock data to estimate things like average monthly returns, volatility, and correlation between companies. For example, comparing JetBlue and Exxon Mobil from 2020 to 2024 showed that JetBlue was much more volatile, with monthly swings of about 16.6%, compared with about 9.8% for Exxon. Numbers like these matter because they help investors understand risk and build better portfolios.</p>
+<p>On the computer science side, I've learned how to turn raw data into clear visualizations using tools like Altair and D3. A good chart can make a pattern obvious in seconds, while a bad one can hide it or even mislead people. Learning to choose the right marks and channels has changed how I think about presenting financial data.</p>
+<p>Long term, I want to build fast, reliable systems that bring these skills together, whether that means trading infrastructure, risk tools, or data platforms. The chart below is a small example: it compares the monthly volatility of the two stocks I studied.</p>
+<h2>What I'm Learning</h2>
+<ul><li>Python and pandas for data analysis</li><li>Data visualization with Altair and D3</li><li>Portfolio returns, risk and correlation</li><li>Building fast, reliable software systems</li></ul>
+<h2>Average Monthly Return vs. Volatility (2020–2024)</h2>
+<div id="chart"></div>
+</main>
+<script>
+const data=[{t:"JBLU",mean:-1.41,sd:16.64},{t:"XOM",mean:1.10,sd:9.79}];
+const w=600,h=360,m={t:20,r:20,b:50,l:60};
+const svg=d3.select("#chart").append("svg").attr("width",w).attr("height",h);
+const x=d3.scaleBand().domain(data.map(d=>d.t)).range([m.l,w-m.r]).padding(0.4);
+const y=d3.scaleLinear().domain([0,18]).range([h-m.b,m.t]);
+svg.selectAll("rect").data(data).join("rect").attr("x",d=>x(d.t)).attr("y",d=>y(d.sd)).attr("width",x.bandwidth()).attr("height",d=>y(0)-y(d.sd)).attr("fill","#14213d");
+svg.append("g").attr("transform",`translate(0,${h-m.b})`).call(d3.axisBottom(x));
+svg.append("g").attr("transform",`translate(${m.l},0)`).call(d3.axisLeft(y));
+svg.append("text").attr("x",-h/2).attr("y",18).attr("transform","rotate(-90)").attr("text-anchor","middle").text("Monthly volatility (%)");
+</script></body></html>
